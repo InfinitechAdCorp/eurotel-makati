@@ -194,7 +194,7 @@ export default function RoomsPreviewSection() {
                 </div>
                 <div className="absolute top-4 right-4">
                   <Badge variant="outline" className="bg-white/90 backdrop-blur-sm border-green-200">
-                    ${room.price}/night
+                    ₱{room.price}/night
                   </Badge>
                 </div>
                 {/* Overlay with quick view */}
@@ -239,7 +239,7 @@ export default function RoomsPreviewSection() {
 
                 <div className="flex items-center justify-between pt-4 border-t border-green-200 mt-auto">
                   <div className="text-2xl font-bold text-green-800">
-                    ${room.price}
+                    ₱{room.price}
                     <span className="text-sm text-green-600 font-normal">/night</span>
                   </div>
 

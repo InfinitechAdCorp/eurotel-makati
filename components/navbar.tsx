@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { useAuth } from "@/contexts/auth-context"
 import { LogOut, Menu, X } from "lucide-react"
 import { useState } from "react"
+import PWAInstallButton from "@/components/PWAInstallButton"
 
 export function Navbar() {
   const pathname = usePathname()
@@ -56,8 +57,11 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* Desktop Auth Buttons */}
+          {/* Desktop Auth Buttons + PWA Install */}
           <div className="hidden md:flex items-center space-x-4">
+            {/* PWA Install Text */}
+            <PWAInstallButton />
+            
             {user ? (
               <div className="flex items-center space-x-4">
                 <Link href="/profile" className="text-sm text-muted-foreground hover:text-primary transition-colors">
@@ -90,8 +94,12 @@ export function Navbar() {
             )}
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          {/* Mobile: PWA Install Text + Menu Button */}
+          <div className="md:hidden flex items-center space-x-3">
+            {/* PWA Install Text for Mobile - positioned between logo and hamburger */}
+            <PWAInstallButton />
+            
+            {/* Mobile Menu Button */}
             <Button variant="ghost" size="sm" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
               {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </Button>
